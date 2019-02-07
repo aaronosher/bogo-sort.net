@@ -1,0 +1,56 @@
+{
+  "name": "all-the-sorts",
+  "version": "0.1.0",
+  "description": "A bogo sort website",
+  "main": "server.js",
+  "scripts": {
+    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
+    "start": "node ./dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronosher/all-the-sorts.git"
+  },
+  "keywords": [
+    "sort",
+    "bogo",
+    "sort",
+    "merge",
+    "sort"
+  ],
+  "author": "Aaron Osher <aaron@aaronosher.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaronosher/all-the-sorts/issues"
+  },
+  "homepage": "https://github.com/aaronosher/all-the-sorts#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-middleware": "^3.5.2",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

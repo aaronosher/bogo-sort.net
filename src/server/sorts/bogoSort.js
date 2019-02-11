@@ -1,4 +1,5 @@
 import isSorted from './isSorted';
+import promiseSleep from '../utils/promise-sleep';
 
 const shuffle = (a) => {
   for (let i = a.length - 1; i > 0; i--) {
@@ -8,10 +9,11 @@ const shuffle = (a) => {
   return a;
 }
 
-const bogoSort = (data, callback) => {
-  while(!isSorted(data)) {
+const bogoSort = async (data, callback) => {
+  // console.info('bogo', isSorted(data));
+  if(!isSorted(data)) {
     callback(data);
-    shuffle(data);
+    return promiseSleep(200).then(() => bogoSort(shuffle(data), callback));
   }
   return data;
 }

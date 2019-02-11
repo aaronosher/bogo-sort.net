@@ -1,10 +1,12 @@
 import path from 'path'
 import express from 'express'
+import http from 'http'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../../webpack.dev.config.js'
-import './sorts';
+import SocketHandler from './sockets';
+import sorts from './sorts';
 
 const app = express(),
             DIST_DIR = __dirname,
@@ -25,7 +27,13 @@ app.get('*', (req, res, next) => {
   })
 })
 const PORT = process.env.PORT || 8080
-app.listen(PORT, () => {
-    console.log(`App listening to ${PORT}....`)
-    console.log('Press Ctrl+C to quit.')
-})
+
+const server = http.Server(app);
+
+const socketHandler = new SocketHandler(server);
+
+server.listen(PORT, () => {
+    console.info(`App listening to ${PORT}....`)
+    console.info('Press Ctrl+C to quit.')
+    sorts(data => socketHandler.sendToAll('sort', data));
+});

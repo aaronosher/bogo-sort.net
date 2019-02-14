@@ -27,6 +27,7 @@
   "homepage": "https://github.com/aaronosher/all-the-sorts#readme",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "d3": "^5.9.1",
     "express": "^4.16.4",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

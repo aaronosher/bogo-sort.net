@@ -3,6 +3,6 @@ import { updateSortData } from '../store/actions/sort';
 
 import openSocket from 'socket.io-client';
 
-const socket = openSocket('http://localhost:8080');
+const socket = openSocket(location.hostname + ':' + location.port);
 
 socket.on('sort', data => store.dispatch(updateSortData(data)));

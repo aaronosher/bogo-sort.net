@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux';
-import Message from './js/Message'
+import App from './js/App'
 import store from './js/store';
 import './css/style.css'
 import './js/socket';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Message />
+    <App />
   </Provider>,
   document.getElementById('react-container') // eslint-disable-line no-undef
 )

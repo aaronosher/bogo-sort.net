@@ -1,7 +1,6 @@
 import path from 'path';
 import express from 'express';
 import http from 'http';
-import SocketIO from 'socket.io';
 import SocketHandler from './sockets';
 import sorts from './sorts';
 

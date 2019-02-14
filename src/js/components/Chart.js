@@ -15,7 +15,7 @@ class Chart extends Component {
   }
 
   drawChart() {
-    const { data, width, height, id } = this.props;
+    const { data, height, id } = this.props;
 
     const heightFactor = 1000/height;
       
@@ -30,9 +30,9 @@ class Chart extends Component {
       .enter()
       .append("rect")
       .attr("x", (d, i) => i * 2)
-      .attr("y", (d, i) => height - d / heightFactor)
+      .attr("y", (d) => height - d / heightFactor)
       .attr("width", 1)
-      .attr("height", (d, i) => d / heightFactor)
+      .attr("height", (d) => d / heightFactor)
       .attr("fill", "green");
 
     
@@ -61,7 +61,6 @@ class Chart extends Component {
 Chart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
   height: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
 };
 

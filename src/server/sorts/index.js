@@ -1,7 +1,7 @@
 import genData from './generateData';
 import bogoSort from './bogoSort';
 
-const numbers = genData(30);
+const numbers = genData(300);
 // let runs = 0;
 
 export default async callback => {

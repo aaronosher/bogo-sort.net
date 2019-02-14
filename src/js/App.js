@@ -9,9 +9,9 @@ class App extends Component {
 
     return (
       <div className="content">
-        <h1>Rexpack</h1>
-        <p className="description">React, Express, and Webpack Boilerplate Application</p>
-        <Chart data={sortData} id="chart" width={700} height={300} />
+        <h1>BogoSort.net</h1>
+        <p className="description">Watch a bogosort that should take longer than the heat death of the universe in real time.</p>
+        <Chart data={sortData} id="chart" height={300} />
       </div>
     )
   }
